@@ -2,19 +2,35 @@
 <html>
 <body>
 
-<h2>Prayer Timer JS</h2>
+<h1>Prayer Timer JS</h1>
+
+<p id="timeLabel">0</p>
+<p id="testLabel">Hey</p>
 
 <button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time. But beware!</button>
+onclick="document.getElementById('timeLabel').style.visibility = 'hidden'">
+Hide Time</button>
 
-<p id="demo"></p>
 
-<button onclick="setTimeout(myFunction, 3000);">Try it</button>
-<p id ="demo"></p>
+<button type="button" onclick=runTimer()>Test</button>
+
+
 <script>
-function myFunction() {
-  document.getElementById('demo').innerHTML = Date();
+let myTimer = setInterval(runTimer, 1000);
+
+	var seconds = 10;
+
+document.getElementById('testLabel').innerHTML = "bye" + seconds;
+
+
+function runTimer() {
+
+	seconds = seconds-1;
+	document.getElementById('timeLabel').innerHTML = seconds;
+	if(seconds < 0)
+		document.getElementById('timeLabel').innerHTML = "boom";
+
+	
 }
 </script>
 
