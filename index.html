@@ -5,7 +5,7 @@
 <h1>Prayer Timer JS</h1>
 
 <p id="timeLabel">0</p>
-<p id="testLabel">Hey</p>
+<p id="testLabel">Test1</p>
 
 <button type="button"
 onclick="document.getElementById('timeLabel').style.visibility = 'hidden'">
@@ -16,21 +16,25 @@ Hide Time</button>
 
 
 <script>
+
+
+
 let myTimer = setInterval(runTimer, 1000);
 
-	var seconds = 10;
+var seconds = 10 * 60 * 1000;
 
-document.getElementById('testLabel').innerHTML = "bye" + seconds;
+
+<!-- document.getElementById('testLabel').innerHTML = "bye" + seconds; -->
 
 
 function runTimer() {
 
 	seconds = seconds-1;
 	document.getElementById('timeLabel').innerHTML = seconds;
-	if(seconds < 0)
-		document.getElementById('timeLabel').innerHTML = "boom";
-
-	
+	if(seconds < 0){
+		document.getElementById('timeLabel').innerHTML = "done";
+		document.body.style.backgroundColor = "blue";
+	}
 }
 </script>
 
