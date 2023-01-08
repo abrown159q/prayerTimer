@@ -59,8 +59,8 @@ function pauseTimer() {
 function countdownTimer() {
 	decreaseTime();
 	checkTimerDoneBehavior();
-	document.getElementById("currentMinutesLabel").innerHTML = timeInSeconds; //getTimeInMinutes();
-	// document.getElementById("currentMinutesLabel").innerHTML = getTimeInMinutes();
+	// document.getElementById("currentMinutesLabel").innerHTML = timeInSeconds; //getTimeInMinutes();
+	document.getElementById("currentMinutesLabel").innerHTML = getTimeInMinutes();
 
 }
 //********************************************************
