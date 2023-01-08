@@ -17,8 +17,9 @@ function checkTimerDoneBehavior() {
 	if(timeInSeconds <=0)
 	{	
 		pauseTimer();
-		// var myYellow = # f3ff0f;
-		document.body.style.backgroundColor = "#f3ff0f";
+		var myYellow = "#f3ff0f";
+		//document.body.style.backgroundColor = "#f3ff0f";
+		document.body.style.backgroundColor = myYellow;
 	}
 }
 
