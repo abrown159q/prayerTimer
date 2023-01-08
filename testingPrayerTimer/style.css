@@ -160,3 +160,28 @@ body{
 	background-color: transparent;
 	color: white;
 }
+
+
+.showHideCurrentMinutes-container{
+	margin: 4vh;
+	padding: 2vh;
+	width: 80vw;
+	height: 25vh;
+	font-size: 10vh;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #179b97;
+	background-image: radial-gradient(circle,#179b97,#176d9b);
+
+}
+
+.showHideCurrentMinutes-button{
+	padding: 10px;
+	width: 80vh;
+	height: 10vh;
+	font-size: 7vh;
+	border: none;
+	
+	background-color: transparent;
+	color: white;
+}

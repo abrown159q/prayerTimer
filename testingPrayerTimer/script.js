@@ -1,13 +1,25 @@
 
 //Time variables
-var timeInSeconds = 59;
+var timeInSeconds = 5;
 
 function getTimeInMinutes() {
-	return Math.floor(timeInSeconds / 60) + 1;
+	if( timeInSeconds%60 == 0)
+		return Math.floor(timeInSeconds / 60);
+	else
+		return Math.floor(timeInSeconds / 60) + 1;
 }
 
 function decreaseTime() {
 	timeInSeconds = timeInSeconds - 1;
+}
+
+function checkTimerDoneBehavior() {
+	if(timeInSeconds <=0)
+	{	
+		pauseTimer();
+		// var myYellow = # f3ff0f;
+		document.body.style.backgroundColor = "#f3ff0f";
+	}
 }
 
 
@@ -39,11 +51,16 @@ function startTimer() {
 	 countdownInterval = setInterval(countdownTimer, 1000);
 }
 
+function pauseTimer() {
+		clearInterval(countdownInterval);
+}
+
 function countdownTimer() {
+	decreaseTime();
+	checkTimerDoneBehavior();
 	document.getElementById("currentMinutesLabel").innerHTML = timeInSeconds; //getTimeInMinutes();
 	// document.getElementById("currentMinutesLabel").innerHTML = getTimeInMinutes();
-	//timeInSeconds = timeInSeconds - 1;
-	decreaseTime();
+
 }
 //********************************************************
 
@@ -56,7 +73,7 @@ var onPauseContinueButton = true;
 function pauseContinueButtonCommands() {
 	if(onPauseContinueButton)
 	{	
-		clearInterval(countdownInterval);
+		pauseTimer();
 		pauseContinueButton.innerHTML = "Continue";
 	}
 	else
@@ -71,8 +88,24 @@ function pauseContinueButtonCommands() {
 
 
 //********************************************************
-//Show hide current Minutes
+//Show hide current Minutes button behavior
+const showHideCurrentMinutesButton = document.getElementById('showHideCurrentMinutesButton');
+showHideCurrentMinutesButton.addEventListener("click", showHideCurrentMinutesButtonCommands);
+var onShowHideButton = true;
+function showHideCurrentMinutesButtonCommands() {
+	if(onShowHideButton)
+	{	
+		document.getElementById("currentMinutesLabel").style.visibility = 'visible';
+		showHideCurrentMinutesButton.innerHTML = "Hide current minutes remaining";
+	}
+	else
+	{
+		document.getElementById("currentMinutesLabel").style.visibility = 'hidden';
+		showHideCurrentMinutesButton.innerHTML = "Show current minutes remaining";
+	}
+	onShowHideButton = !onShowHideButton;
 
+}
 
 
 //********************************************************
