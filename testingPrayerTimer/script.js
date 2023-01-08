@@ -67,6 +67,12 @@ function pauseContinueButtonCommands() {
 	onPauseContinueButton = !onPauseContinueButton;
 
 }
+//********************************************************
+
+
+//********************************************************
+//Show hide current Minutes
+
 
 
 //********************************************************
