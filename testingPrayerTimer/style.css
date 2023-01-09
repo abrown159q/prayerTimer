@@ -5,6 +5,9 @@ body{
 	height: 100vh;
 	background-color: #176d9b;
 	font-size: 100%;
+	transition-property: background-color;
+    transition-duration: 5s;
+  
 }
 
 .panel{
