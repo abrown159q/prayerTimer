@@ -1,12 +1,16 @@
 
 //Time variables
-var timeInSeconds = 5;
+var timeInSeconds = 60;
 
 function getTimeInMinutes() {
 	if( timeInSeconds%60 == 0)
 		return Math.floor(timeInSeconds / 60);
 	else
 		return Math.floor(timeInSeconds / 60) + 1;
+}
+
+function setTimeInSeconds(value) {
+	timeInSeconds = value;
 }
 
 function decreaseTime() {
@@ -141,7 +145,10 @@ function createMinutesLabel(){
 //Dynamic range slider action
 var slider = document.getElementById("minuteSlider");
 slider.oninput = function() {
-	timeInSeconds = this.value * 60;
+	if(this.value > 0)
+		setTimeInSeconds(this.value * 60);
+	else
+		setTimeInSeconds(5);
 	if(showMinutesPressed)
 		createMinutesLabel();
 }
