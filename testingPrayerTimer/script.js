@@ -22,11 +22,18 @@ function checkTimerDoneBehavior() {
 	{	
 		pauseTimer();
 		var myYellow = "#f3ff0f";
+		playSound();
 		//document.body.style.backgroundColor = "#f3ff0f";
 		document.body.style.backgroundColor = myYellow;
 	}
 }
 
+var audio = new Audio("ocean.mp3");
+function playSound(){
+
+	audio.play();
+
+}
 
 //Panels
 const titlePanel = document.getElementById("titlePanel");
@@ -80,6 +87,7 @@ function pauseContinueButtonCommands() {
 	{	
 		pauseTimer();
 		pauseContinueButton.innerHTML = "Continue";
+		audio.pause();
 	}
 	else
 	{
@@ -156,13 +164,13 @@ slider.oninput = function() {
 
 
 //********************************************************
-//Sound
-const playSoundButton = document.getElementById("playSoundButton");
-playSoundButton.addEventListener("click", playSoundButtonCommands);
-function playSoundButtonCommands() {
-	const audio = new Audio("ocean.mp3");
-	audio.play();
-}
+//Sound Test Button
+// const playSoundButton = document.getElementById("playSoundButton");
+// playSoundButton.addEventListener("click", playSoundButtonCommands);
+// function playSoundButtonCommands() {
+	// const audio = new Audio("ocean.mp3");
+	// audio.play();
+// }
 
 // const pauseContinueButton = document.getElementById('pauseContinueButton');
 // pauseContinueButton.addEventListener("click", pauseContinueButtonCommands);
