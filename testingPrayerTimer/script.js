@@ -155,4 +155,15 @@ slider.oninput = function() {
 //********************************************************
 
 
-//
+//********************************************************
+//Sound
+const playSoundButton = document.getElementById("playSoundButton");
+playSoundButton.addEventListener("click", playSoundButtonCommands);
+function playSoundButtonCommands() {
+	const audio = new Audio("ocean.mp3");
+	audio.play();
+}
+
+// const pauseContinueButton = document.getElementById('pauseContinueButton');
+// pauseContinueButton.addEventListener("click", pauseContinueButtonCommands);
+// var onPauseContinueButton = true;
