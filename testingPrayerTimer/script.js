@@ -175,3 +175,12 @@ slider.oninput = function() {
 // const pauseContinueButton = document.getElementById('pauseContinueButton');
 // pauseContinueButton.addEventListener("click", pauseContinueButtonCommands);
 // var onPauseContinueButton = true;
+
+
+//********************************************************
+//Vibration Test Button
+const vibrationTestButton = document.getElementById("vibrationTestButton");
+vibrationTestButton.addEventListener("click", vibrationButtonCommands);
+function vibrationButtonCommands() {
+	navigator.vibrate(1000);
+}
