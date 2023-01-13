@@ -183,4 +183,5 @@ const vibrationTestButton = document.getElementById("vibrationTestButton");
 vibrationTestButton.addEventListener("click", vibrationButtonCommands);
 function vibrationButtonCommands() {
 	navigator.vibrate(1000);
+	vibrationTestButton.innerHTML = "done";
 }
